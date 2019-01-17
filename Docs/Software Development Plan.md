@@ -40,9 +40,9 @@ The coding metrics section will be a detailed look into the Coding Score. It wil
 ## Personnel
 | Role  | Person |
 | ----------- | ----------- |
-| First Role  | Chandler Davidson |
-| Second Role | Snehal Gaikwad |
-| Third Role  | Robert Harvey |
-| Fourth Role | Elijah Hicks |
+| Software Lead  | Chandler Davidson |
+| Requirements Analyst | Snehal Gaikwad |
+| Scrum Master | Robert Harvey |
+| Customer Liaison | Elijah Hicks |
 
 ## Risks
