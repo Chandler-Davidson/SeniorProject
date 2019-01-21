@@ -32,17 +32,48 @@ The coding metrics section will be a detailed look into the Coding Score. It wil
 
 ## Project Schedule
 ### List of Deliverables
-#### Documents
-#### Demonstrations
+| Date | Title |
+| ---- | ----- |
+| January 28th | Software Development Plan Document |
+| January 28th | Software Development Plan Presentation |
+| February 13th | Project Backlog: First Draft |
+| March 4th | Architectural Backlog |
+| March 27th | Preliminary GUI Design |
+| April 17th | Final Delivery |
 
-## List of Milestones
+### Sprint Reports
+| Date | Title |
+| ---- | ----- |
+| January 30th | Sprint 1 Report |
+| February 18th | Sprint 2 Report |
+| March 6th | Sprint 3 Report |
+| April 1st | Sprint 4 Report |
+| April 22nd | Sprint 5 Report |
+
+### List of Milestones
+| Date | Title | Description |
+| ---- | ----- | ----------- |
+| February 4th | Architectural Design | Define the broad systemic program architecture and schemas. |
+| February 18th | Minimum Viable: Parser | Implement the basic framework for the parser. Develop one or two rules to demonstrate product viability. |
+| March 4th | Minimum Viable: Back-end | Implement the basic framework for the back-end. Develop the connectivity of such using a rudimentary UI. |
+| March 11th | Minimum Viable: Front-end | Implement the basic framework for the front-end GUI. Cover the most rudimentary user stories. |
+| March 25th | Product Refinement | Refine product features, general code cleaning and improvement. |
+| April 1st | Feature Improvement | Add additional feature sets. |
+| April 8th | Product Delivery | Finish major customer requests and deliver the final product. |
 
 ## Personnel
-| Role  | Person |
-| ----------- | ----------- |
+| Role | Person |
+| ---- | ------ |
 | Software Lead  | Chandler Davidson |
 | Requirements Analyst | Snehal Gaikwad |
 | Scrum Master | Robert Harvey |
 | Customer Liaison | Elijah Hicks |
 
 ## Risks
+Below is a listing of acknowledges risks, their potential impact, and their summarized avoidance plans. The impact potentials are ranked from least to worst impacts as the following: `Negligible`, `Marginal`, `Critical`, and `Catastrophic`.
+
+| Potential Risk | Potential Impact | Avoidance Plan |
+| -------------- | ---------------- | -------------- |
+| Loss of a team member | Critical | Preemptive early deadlines |
+| Product size | Critical | Awareness of feature creep |
+| Technology stack | Marginal | Individual review and research |
