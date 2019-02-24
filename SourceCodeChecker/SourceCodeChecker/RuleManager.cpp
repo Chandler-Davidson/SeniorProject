@@ -1,4 +1,4 @@
-#include <vector>
+/*#include <vector>
 #include <string>
 
 class RuleManager
@@ -8,4 +8,4 @@ public:
 private:
 	vector<Rule> Rules;
 	Storage dataStore;
-};
+};*/

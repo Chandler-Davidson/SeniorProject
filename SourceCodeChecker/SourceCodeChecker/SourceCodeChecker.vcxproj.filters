@@ -15,20 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RuleManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Storage.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Test1.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

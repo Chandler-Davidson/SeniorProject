@@ -1,4 +1,4 @@
-#include <string>
+/*#include <string>
 
 template <typename T>
 class Rule
@@ -8,4 +8,4 @@ public:
 private:
 	string name;
 	T state;
-};
+};*/

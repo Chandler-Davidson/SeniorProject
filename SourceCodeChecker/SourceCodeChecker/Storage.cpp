@@ -1,4 +1,4 @@
-
+/*
 class Storage
 {
 public:
@@ -6,4 +6,4 @@ public:
 private:
 	string outputDirectory;
 	// serializer for .jsons here
-};
+};*/

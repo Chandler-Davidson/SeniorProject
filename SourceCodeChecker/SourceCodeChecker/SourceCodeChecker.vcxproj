@@ -56,6 +56,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -77,10 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Parser.cpp" />
-    <ClCompile Include="Rule.cpp" />
-    <ClCompile Include="RuleManager.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Storage.cpp" />
+    <ClCompile Include="Test1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
