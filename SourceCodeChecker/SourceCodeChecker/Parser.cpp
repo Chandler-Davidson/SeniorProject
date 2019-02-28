@@ -50,6 +50,8 @@ void Parser::Parse(string filePath)
 						word = line.substr(found, previous);
 						previous = found;
 					}
+					else
+						word = line.substr(previous, line.length());
 
 				}
 
