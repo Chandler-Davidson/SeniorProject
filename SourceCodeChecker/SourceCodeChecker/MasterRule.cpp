@@ -1,16 +1,8 @@
-/*
-#include <string>
 
-class Rule
+#include "MasterRule.h"
+
+string MasterRule::run(string l)
 {
-public:
-	string execute(string l);
-private:
-	void splitLine();
-	void run();
-	string name;
-	int state;
-};
+	//Read line
+}
 
-
-*/
