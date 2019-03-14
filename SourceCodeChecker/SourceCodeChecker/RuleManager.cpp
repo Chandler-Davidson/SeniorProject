@@ -31,12 +31,12 @@ bool setActiveRules(vector<string> active)
 // Used by parser to send the string
 void run(string input)
 {
-
+	// Run rules that are active
 }
 
 // Will be called at the end of a file and retreive the
 // final metrics from the rules then push them to storage
 void finished()
 {
-
+	// Once finished store metrics
 }
