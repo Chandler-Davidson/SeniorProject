@@ -21,13 +21,13 @@ public:
 private:
 	// Where the rule will actually check the line for
 	// whatever metric it is currently looking for.
-	// Be sure to add this to your class and customize as needed.
+	// ~~Be sure to add this to your class and customize as needed.~~
 	virtual void checkLine();
 
 	// Called after the file has finished being read
 	// used to send collected metrics back to the
 	// rule manager. 
-	// Be sure to add this to your class and customize as needed.
+	// ~~Be sure to add this to your class and customize as needed.~~
 	virtual string finished();
 
 	// Base required variables
