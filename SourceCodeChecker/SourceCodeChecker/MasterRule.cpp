@@ -1,3 +1,7 @@
+/*
+*	Last worked on 3/14/2019
+*	MasterRule.cpp
+*/
 
 #include "MasterRule.h"
 
@@ -11,7 +15,7 @@ string MasterRule::run(string l)
 // Where the rule will actually check the line for
 // whatever metric it is currently looking for.
 // ~~Be sure to add this to your class and customize as needed.
-virtual void MasterRule::checkLine()
+void MasterRule::checkLine()
 {
 	// Check data
 }
@@ -20,7 +24,7 @@ virtual void MasterRule::checkLine()
 // used to send collected metrics back to the
 // rule manager. 
 // ~~Be sure to add this to your class and customize as needed.
-virtual string MasterRule::finished()
+string MasterRule::finished()
 {
 	// Put data in a string and return it to the Rule Manager
 	return data;
