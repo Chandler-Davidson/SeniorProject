@@ -3,6 +3,8 @@
 *	RuleManager.cpp
 */
 
+#include "RuleManager.h"
+
 // Set to NULL initialy
 RuleManager* RuleManager::instance = new RuleManager();
 
@@ -14,4 +16,5 @@ RuleManager* RuleManager::getInstance()
 
 // Constructior for RuleManager
 RuleManager::RuleManager()
-{}
+{
+}
