@@ -9,7 +9,13 @@
 *	the file parsed by the parser
 */
 
+#ifndef MASTERRULE_H
+#define MASTERRULE_H
+
+#include <iostream>
 #include <string>
+
+using namespace std;
 
 class MasterRule
 {
@@ -34,3 +40,5 @@ private:
 	string name;
 	int state;
 };
+
+#endif
