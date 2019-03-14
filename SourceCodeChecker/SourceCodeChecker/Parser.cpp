@@ -1,63 +1,50 @@
+/*
+*	Last worked on 3/13/2019
+*	Parser.cpp
+*	
+*	Receive a file and parse it into lines then
+*	send each line to Rule Manager.
+*/
+
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Parser
 {
 public:
+	// Doesn't need to return anything
+	// it calls Rule Manager directly
 	void Parse(string filePath);
+	
 private:
-	//RuleManager ruleManager;
+	RuleManager ruleManager;
 };
 
-
+/*
+	Main function used to parse files
+*/
 void Parser::Parse(string filePath)
 {
+	// Create input file stream and open file
 	ifstream myfile;
 	myfile.open(filePath);
+
 	string line;
-	size_t found = NULL;
-	size_t previous = 0;
-	string word = "";
-	int strLen = NULL;
-	const string searchStr = " ";
 
 	if (myfile.is_open())
 	{
+		// Pull out each line to send to Rule Manager
 		while (getline(myfile, line))
 		{
-			strLen = line.length();
-			previous = 0;
-			//Check the line for "words" 
-			//by getting all data between spaces
-			do
-			{
-				// Blank word for the next run
-				word = "";
-
-				//Check for the first space
-				found = line.find(searchStr, previous+1);
-				//Check if there is a space at start
-				if (found == 0) {
-					//If found == 0 do nothing
-				}
-				//As long as it's not end of line pull the "word" out
-				else if (found != string::npos) {
-					//pull the "word" out
-					word = line.substr(previous, found-previous);
-					previous = found;
-				}
-				else
-					word = line.substr(previous, strLen-previous);
-
-				if (word != "")
-					cout << word << "\n"; //Send word to rule manager
-
-			} while (found != string::npos); // Stop checking if end of line
-			cout << line << '\n';
+			// Send the line to rule manager
+			ruleManager.run(line);
 		}
+		// Close the file
 		myfile.close();
+		ruleManager.finished();
 	}
 }
 
