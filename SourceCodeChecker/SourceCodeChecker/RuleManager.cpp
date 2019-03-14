@@ -1,11 +1,17 @@
-/*#include <vector>
-#include <string>
+/*
+*	Last worked on 3/13/2019
+*	RuleManager.cpp
+*/
 
-class RuleManager
+// Set to NULL initialy
+RuleManager* RuleManager::instance = new RuleManager();
+
+// Will return the instance of the RuleManager
+RuleManager* RuleManager::getInstance()
 {
-public:
-	//void Delegate(string input);
-private:
-	vector<Rule> Rules;
-	Storage dataStore;
-};*/
+	return instance;
+}
+
+// Constructior for RuleManager
+RuleManager::RuleManager()
+{}
