@@ -27,10 +27,8 @@ class RuleManager
 public:
 	// Used to get the instance of Rule Manager
 	static RuleManager* getInstance();
-	// Used by parser to send the string
+	bool setActiveRules(vector<string> active);
 	void run(string input);
-	// Will be called at the end of a file and retreive the
-	// final metrics from the rules then push them to storage
 	void finished();
 
 private:
