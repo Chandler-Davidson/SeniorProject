@@ -1,6 +1,6 @@
 /*
 *	Last worked on 3/13/2019
-*	Rule.h
+*	MasterRule.h
 *	
 *	This is a general class that all other rules will
 *	inherent from.
