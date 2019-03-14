@@ -49,9 +49,3 @@ void Parser::Parse(string filePath)
 		ruleManager.finished();
 	}
 }
-
-void main()
-{
-	Parser myparser;
-	myparser.Parse("Test1.cpp");
-}
