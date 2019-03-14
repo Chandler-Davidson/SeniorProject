@@ -10,6 +10,8 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include "RuleManager.h"
+
 using namespace std;
 
 class Parser

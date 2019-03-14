@@ -12,9 +12,15 @@
 *	while passing each line.
 */
 
+#ifndef RULEMANAGER_H
+#define RULEMANAGER_H
+
 #include <iostream>
 #include <vector>
 #include <string>
+#include "MasterRule.h"
+
+using namespace std;
 
 class RuleManager
 {
@@ -29,9 +35,9 @@ public:
 
 private:
 	// Private constructor so it can't be called
-	Singleton();
+	RuleManager();
 	// List of rules stored on the hard disk
-	vector<Rule> rules;
+	vector<MasterRule> rules;
 	// Dynamically created by list sent from File Manager
 	vector<int> activeRules;
 	// The instance will be stored here
@@ -40,3 +46,5 @@ private:
 	// an actual database.
 	//Storage dataStore;
 };
+
+#endif

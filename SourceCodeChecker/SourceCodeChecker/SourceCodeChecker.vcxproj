@@ -78,8 +78,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MasterRule.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="RuleManager.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="Test1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MasterRule.h" />
+    <ClInclude Include="RuleManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
