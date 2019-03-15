@@ -20,12 +20,10 @@ using namespace std;
 class MasterRule
 {
 public:
-	string run(string l);
-
-private:
-	virtual void checkLine();
+	virtual void run(string l);
 	virtual string finished();
 
+private:
 	// Base required variables
 	string name;
 	int state;
