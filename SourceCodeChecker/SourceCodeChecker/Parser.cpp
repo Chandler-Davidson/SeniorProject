@@ -14,6 +14,9 @@
 
 using namespace std;
 
+// TODO: Add a way to tell the RuleManager what
+//		 file is currently being used
+
 class Parser
 {
 public:
@@ -33,6 +36,8 @@ void Parser::Parse(string filePath)
 	// Create input file stream and open file
 	ifstream myfile;
 	myfile.open(filePath);
+
+	// Function to send RuleManager filepath
 
 	string line;
 
