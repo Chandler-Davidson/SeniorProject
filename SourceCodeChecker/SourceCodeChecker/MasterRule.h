@@ -1,5 +1,5 @@
 /*
-*	Last worked on 3/13/2019
+*	Last worked on 3/19/2019
 *	MasterRule.h
 *	
 *	This is a general class that all other rules will
@@ -20,15 +20,20 @@ using namespace std;
 class MasterRule
 {
 public:
+	MasterRule();
 	virtual void run(string l);
 	virtual string finished();
+	string getName();
+
+protected:
+	// Used to store data that is returned to the RuleManager
+	int count;
+	string data;
 
 private:
 	// Base required variables
 	string name;
 	int state;
-	// Used to store data that is returned to the RuleManager
-	string data;
 };
 
 #endif
