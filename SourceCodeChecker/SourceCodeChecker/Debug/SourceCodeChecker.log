@@ -1,12 +1,4 @@
-﻿Build started 2/20/2019 7:17:50 PM.
-     1>Project "D:\Users\evQ054\Desktop\CS499\Static Code Analyzer\SeniorProject\SourceCodeChecker\SourceCodeChecker\SourceCodeChecker.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\evQ054\Desktop\CS499\Static Code Analyzer\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\evQ054\Desktop\CS499\Static Code Analyzer\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\evQ054\Desktop\CS499\Static Code Analyzer\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.lib" /MACHINE:X86 Debug\Parser.obj
-         Debug\Test1.obj
-     1>Parser.obj : error LNK2019: unresolved external symbol "public: __thiscall Parser::Parser(void)" (??0Parser@@QAE@XZ) referenced in function _main
-     1>D:\Users\evQ054\Desktop\CS499\Static Code Analyzer\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.exe : fatal error LNK1120: 1 unresolved externals
-     1>Done Building Project "D:\Users\evQ054\Desktop\CS499\Static Code Analyzer\SeniorProject\SourceCodeChecker\SourceCodeChecker\SourceCodeChecker.vcxproj" (Build target(s)) -- FAILED.
-
-Build FAILED.
-
-Time Elapsed 00:00:00.21
+﻿  IntCountRule.cpp
+c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(56): warning C4018: '<=': signed/unsigned mismatch
+  SourceCodeChecker.vcxproj -> C:\Users\Bobby\Documents\GitHub\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.exe
