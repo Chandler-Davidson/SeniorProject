@@ -1,5 +1,5 @@
 /*
-*	Last worked on 3/13/2019
+*	Last worked on 3/19/2019
 *	RuleManager.h
 *	
 *	Receives a list of rules to run from File Manager
@@ -18,31 +18,47 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <filesystem>
 #include "MasterRule.h"
+#include "RuleFactory.h"
+//Won't be used once factory is setup
+#include "Rules/IntCountRule.h"
 
 using namespace std;
 
 class RuleManager
 {
+private:
+	// The instance will be stored here
+	static RuleManager* instance;
+	// Private constructor so it can't be called
+	RuleManager();
+	// To remove all pointers
+	~RuleManager();
+	// Used to map the file strings to their class
+	//TODO: Create factory to add all rules that we
+	//       create so that we can instantiate each
+	//		 of the rules that we have.
+	//		OR
+	//		Be able to create from the string
+
+	// List of rules stored on the hard disk
+	vector<unique_ptr<MasterRule>> rules;
+	// Dynamically created by list sent from File Manager
+	vector<int> activeRules;
+	// Stores the current files filename
+	string fileName;
+	// Probably won't be used because we will be queueing
+	// an actual database.
+	//Storage dataStore;
+
 public:
 	// Used to get the instance of Rule Manager
 	static RuleManager* getInstance();
 	bool setActiveRules(vector<string> active);
+	void setName(string fileName);
 	void run(string input);
 	void finished();
-
-private:
-	// Private constructor so it can't be called
-	RuleManager();
-	// List of rules stored on the hard disk
-	vector<MasterRule> rules;
-	// Dynamically created by list sent from File Manager
-	vector<int> activeRules;
-	// The instance will be stored here
-	static RuleManager* instance;
-	// Probably won't be used because we will be queueing
-	// an actual database.
-	//Storage dataStore;
 };
 
 #endif
