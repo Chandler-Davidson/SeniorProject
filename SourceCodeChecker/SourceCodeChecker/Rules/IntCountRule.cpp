@@ -54,6 +54,10 @@ void IntCountRule::run(string l)
 				}
 		}
 	}
+	else if (found == string::npos)
+	{
+
+	}
 	else
 	{
 		// Check to make sure there is something before
