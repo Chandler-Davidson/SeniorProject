@@ -33,6 +33,9 @@ private:
 	// Used to store data that is returned to the RuleManager
 	//int count;
 	//string data;
+
+	// Extra vars
+	int ifCount;
 };
 
 #endif
