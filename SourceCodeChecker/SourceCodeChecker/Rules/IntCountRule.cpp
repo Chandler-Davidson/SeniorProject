@@ -8,11 +8,11 @@
 IntCountRule::IntCountRule()
 {
 	// Base required variables
-	string name = "IntRuleCount"; // Name of the rule
+	this->name = "IntRuleCount"; // Name of the rule
 	//int state = 0; // ??? Not sure what I had in mind here
 	// Used to store data that is returned to the RuleManager
-	int count = 0; // A storeage var for any rule that just has a count
-	string data = ""; // A var to send finialized data back to rule manager
+	this->count = 0; // A storeage var for any rule that just has a count
+	this->data = ""; // A var to send finialized data back to rule manager
 }
 
 // Return the name of the rule. Used to initialize
@@ -39,6 +39,7 @@ void IntCountRule::run(string l)
 			// the point so you don't get an out of scope error
 			if (found + 4 < l.size())
 			{
+				count++;
 			}
 			else
 				// If there isn't tick count up one
@@ -48,6 +49,10 @@ void IntCountRule::run(string l)
 					count++;
 				}
 		}
+	}
+	else if (found == string::npos)
+	{
+
 	}
 	else
 	{
