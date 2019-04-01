@@ -34,8 +34,10 @@ private:
 	//int count;
 	//string data;
 
+/* example:
 	// Extra vars
 	int ifCount;
+*/
 };
 
 #endif
