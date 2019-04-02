@@ -5,8 +5,10 @@
 *	Receive a file and parse it into lines then
 *	send each line to Rule Manager.
 */
-
+#include<iostream>
+#include<fstream>
 #include "Parser.h"
+using namespace std;
 
 // Will intialize ruleManager if called by just Parser
 Parser::Parser()

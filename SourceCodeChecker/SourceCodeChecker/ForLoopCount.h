@@ -1,27 +1,16 @@
-#pragma once
-/*
-*	Last worked on 3/19/2019
-*	IntCountRule.h
-*
-*	This rule will count how many int's can be initialized
-*	within a file.
-*
-*	It will return a count
-*/
-
-#ifndef INTCOUNTRULE_H
-#define INTCOUNTRULE_H
+#ifndef FORLOOPCOUNT_H
+#define FORLOOPCOUNT_H
 
 #include <iostream>
 #include <string>
-#include "../MasterRule.h"
+#include "MasterRule.h"
 
 using namespace std;
 
-class IntCountRule : public MasterRule
+class ForLoopCount : public MasterRule
 {
 public:
-	IntCountRule();
+	ForLoopCount();
 	virtual void run(string l);
 	virtual string finished();
 	string getName();

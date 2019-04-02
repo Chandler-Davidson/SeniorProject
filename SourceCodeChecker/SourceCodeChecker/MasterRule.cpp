@@ -4,6 +4,9 @@
 */
 
 #include "MasterRule.h"
+#include<string>
+#include<iostream>
+using namespace std;
 
 MasterRule::MasterRule()
 {

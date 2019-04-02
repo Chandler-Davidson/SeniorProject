@@ -2,7 +2,10 @@
 *	Last worked on 3/19/2019
 *	RuleManager.cpp
 */
-
+#include<filesystem>
+#include<iostream>
+#include<string>
+#include<vector>
 #include "RuleManager.h"
 
 RuleManager* RuleManager::instance = 0;
@@ -75,7 +78,7 @@ void RuleManager::run(string input)
 {
 	// Run rules that are active
 	// Send line to each rule
-	for(size_t i = 0; i < activeRules.size(); i++)
+	for(int i = 0; i < activeRules.size(); i++)
 		rules[activeRules[i]]->run(input);
 }
 
@@ -87,11 +90,11 @@ void RuleManager::finished()
 
 	// Loop all active rules to tell them the
 	// parser is finished
-	for (size_t i = 0; i < activeRules.size(); ++i)
+	for (int i = 0; i < activeRules.size(); ++i)
 	{
 		data = rules[activeRules[i]]->finished();
 
-		cout << "Stored data for: " << rules[activeRules[i]]->getName() << ".\n";
+		cout << "Stored data for: " << rules[activeRules[i]]->getName() << "\n";
 	}
 
 	fileName = "";
