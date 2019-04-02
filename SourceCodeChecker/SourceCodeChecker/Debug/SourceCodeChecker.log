@@ -1,0 +1,4 @@
+﻿  IntCountRule.cpp
+c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(61): warning C4018: '<=': signed/unsigned mismatch
+  SourceCodeChecker.vcxproj -> C:\Users\Bobby\Documents\GitHub\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.exe
