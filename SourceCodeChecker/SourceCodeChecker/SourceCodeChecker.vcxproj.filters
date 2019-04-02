@@ -39,22 +39,34 @@
     <ClCompile Include="RuleFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ForLoopCount.cpp">
+      <Filter>Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="SemicolonCount.cpp">
+      <Filter>Rules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MasterRule.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RuleManager.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Rules\IntCountRule.h">
       <Filter>Rules</Filter>
     </ClInclude>
+    <ClInclude Include="ForLoopCount.h">
+      <Filter>Rules</Filter>
+    </ClInclude>
     <ClInclude Include="Parser.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RuleManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RuleFactory.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SemicolonCount.h">
+      <Filter>Rules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,6 +11,8 @@
 
 #include "Parser.h"
 #include "RuleManager.h"
+#include <string>
+#include<vector>
 
 int main()
 {

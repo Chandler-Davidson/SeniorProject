@@ -1,4 +1,1 @@
-﻿  IntCountRule.cpp
-c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(40): warning C4018: '<': signed/unsigned mismatch
-c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(56): warning C4018: '<=': signed/unsigned mismatch
-  SourceCodeChecker.vcxproj -> C:\Users\Bobby\Documents\GitHub\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: The Windows SDK version 8.1 was not found. Install the required version of Windows SDK or change the SDK version in the project property pages or by right-clicking the solution and selecting "Retarget solution".
