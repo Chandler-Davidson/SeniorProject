@@ -53,8 +53,6 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <PrecompiledHeaderFile />
-      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,24 +80,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ForLoopCount.cpp" />
+    <ClCompile Include="Rules\ForLoopCount.cpp" />
     <ClCompile Include="MasterRule.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="RuleFactory.cpp" />
     <ClCompile Include="RuleManager.cpp" />
     <ClCompile Include="Rules\IntCountRule.cpp" />
-    <ClCompile Include="SemicolonCount.cpp" />
+    <ClCompile Include="Rules\SemicolonCount.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Test1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ForLoopCount.h" />
+    <ClInclude Include="Rules\ForLoopCount.h" />
     <ClInclude Include="MasterRule.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="RuleFactory.h" />
     <ClInclude Include="RuleManager.h" />
     <ClInclude Include="Rules\IntCountRule.h" />
-    <ClInclude Include="SemicolonCount.h" />
+    <ClInclude Include="Rules\SemicolonCount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -67,6 +67,5 @@
     </ClInclude>
     <ClInclude Include="SemicolonCount.h">
       <Filter>Rules</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

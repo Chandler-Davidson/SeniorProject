@@ -2,6 +2,7 @@
 *	Last worked on 3/19/2019
 *	RuleManager.cpp
 */
+
 #include<filesystem>
 #include<iostream>
 #include<string>

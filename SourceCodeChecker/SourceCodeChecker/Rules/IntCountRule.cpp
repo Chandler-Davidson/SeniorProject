@@ -1,16 +1,25 @@
+/*
+*	Last worked on 3/19/2019
+*	IntCountRule.cpp
+*/
+#include "IntCountRule.h"
 //Count number of "for" loops
 #include<iostream>
 #include<string>
 #include<regex>
-#include "IntCountRule.h"
 
 IntCountRule::IntCountRule()
 {
+	// Base required variables
+	this->name = "IntRuleCount"; // Name of the rule
+	//int state = 0; // ??? Not sure what I had in mind here
+	// Used to store data that is returned to the RuleManager
+	this->count = 0; // A storeage var for any rule that just has a count
+	this->data = ""; // A var to send finialized data back to rule manager
 
-	string name = "IntCountRule"; // Name of the rule
-	int count = 0; // A storeage var for any rule that just has a count
-	string data = ""; // A var to send finialized data back to rule manager
-
+/* example
+	ifCount = 0;
+*/
 }
 
 // Return the name of the rule. Used to initialize
@@ -35,9 +44,7 @@ void IntCountRule::run(string l)
 // ~~Be sure to add this to your class and customize as needed.
 string IntCountRule::finished()
 {
-	data = count;                     
-
-
+	data = count;
 	cout << "\n" << count << "\n";
 	// Return count to 0
 	count = 0;

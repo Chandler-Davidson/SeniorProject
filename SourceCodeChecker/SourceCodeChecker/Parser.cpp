@@ -10,6 +10,8 @@
 #include "Parser.h"
 using namespace std;
 
+#include "Parser.h"
+
 // Will intialize ruleManager if called by just Parser
 Parser::Parser()
 {

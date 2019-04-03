@@ -29,10 +29,15 @@ public:
 private:
 	// Base required variables
 	string name;
-	//int state;
+	int state;
 	// Used to store data that is returned to the RuleManager
 	//int count;
 	//string data;
+
+/* example:
+	// Extra vars
+	int ifCount;
+*/
 };
 
 #endif
