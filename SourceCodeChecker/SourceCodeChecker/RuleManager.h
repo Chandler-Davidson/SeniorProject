@@ -23,6 +23,8 @@
 #include "RuleFactory.h"
 //Won't be used once factory is setup
 #include "Rules/IntCountRule.h"
+#include "Rules/ForLoopCount.h"
+#include "Rules/SemicolonCount.h"
 
 using namespace std;
 

@@ -35,7 +35,7 @@ void ForLoopCount::run(string l)
 	// ~~Be sure to add this to your class and customize as needed.
 	string ForLoopCount::finished()
 	{
-		data = count;                      //this count is out of scope .finished() needs to receive count from run()
+		data = count; //this count is out of scope .finished() needs to receive count from run()
 
 
 		cout << "\n" << count << "\n";

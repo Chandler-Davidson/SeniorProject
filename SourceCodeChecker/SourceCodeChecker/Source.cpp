@@ -12,26 +12,48 @@
 #include "Parser.h"
 #include "RuleManager.h"
 #include <string>
-#include<vector>
+#include <vector>
+#include <stringstream>
 
-int main()
+int main(int argc, char** argv)
 {
 	RuleManager* ruleManager = ruleManager->getInstance();
 	Parser parser;
-
-	string filePath1 = "C:\\Users\\Bobby\\Documents\\GitHub\\SeniorProject\\SourceCodeChecker\\SourceCodeChecker\\Rules\\IntCountRule.cpp";
-	string filePath2 = "C:\\Users\\Bobby\\Documents\\GitHub\\SeniorProject\\SourceCodeChecker\\SourceCodeChecker\\Rules\\IntCountRule.h";
-
+	vector<string> filePaths;
 	vector<string> activeRules;
-	activeRules.push_back("IntCountRule");
+	int j = 0
+
+	for(int i = 1; i < argc; i++)
+	{
+		if(argv[i] == "-filepath")
+		{
+			j = 0;
+			std::istringstream iss(argv[i+1]);;
+			for(std::string s; iss >> s; )
+			{
+    			filePaths[j].emplace_back(s);
+    			j++
+			}
+		}
+
+		else if (argv[i] == "-rules")
+		{
+			j = 0;
+			std::istringstream iss(argv[i+1]);;
+			for(std::string s; iss >> s; )
+			{
+    			activeRules[j].emplace_back(s);
+    			j++
+			}
+		}
+	}
 
 	// Set ruleManager Rules
 	ruleManager->setActiveRules(activeRules);
 
 	// Run Parser on files
-	parser.Parse(filePath1);
-
-	parser.Parse(filePath2);
+	for(j = 0; j < filePaths.size(); j++)
+		parser.Parse(filePaths[j]);
 	
 	return 0;
 }

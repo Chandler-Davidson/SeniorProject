@@ -3,10 +3,6 @@
 *	RuleManager.cpp
 */
 
-#include<filesystem>
-#include<iostream>
-#include<string>
-#include<vector>
 #include "RuleManager.h"
 
 RuleManager* RuleManager::instance = 0;
@@ -31,10 +27,12 @@ RuleManager::RuleManager()
 		}
 	}
 
-	static IntCountRule* p = new IntCountRule();
-
-	// Temp till the rule factory can be setup
-	rules.emplace_back(p);
+	static IntCountRule* var = new IntCountRule();
+	rules.emplace_back(var);
+	static ForLoopCount* var = new ForLoopCount();
+	rules.emplace_back(var);
+	static SemicolonCount* var = new SemicolonCount();
+	rules.emplace_back(var);
 
 	fileName = "";
 }
@@ -55,14 +53,21 @@ RuleManager* RuleManager::getInstance()
 // Create using the rule name?
 bool RuleManager::setActiveRules(vector<string> active)
 {
-	// Check names in given vector with names of
-	// rules found in directory.
-	
-	// As found create an array of active rules
-	// to iterate over.
-
-	//temp for testing
-	activeRules.push_back(0);
+	// Check each passed rule name
+	for(int i = 0; i < active.size(); i++)
+	{
+		// Vs each actual rule
+		for(int j = 0; j < rules.size(); i++)
+		{
+			// If the name matches add location of j
+			// into activeRules and break;
+			if(rules[j].getName() == active[i].getName())
+			{
+				activeRules.emplace_back(j);
+				break;
+			}
+		}
+	}
 
 	return true;
 }
