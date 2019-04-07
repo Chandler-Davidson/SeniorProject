@@ -11,16 +11,16 @@ using namespace std;
 MasterRule::MasterRule()
 {
 	// Base required variables
-	string name = ""; // Name of the rule
+	this->name = ""; // Name of the rule
 	//int state = 0; // ???
 	// Used to store data that is returned to the RuleManager
-	static int count = 0; // A storeage var for any rule that just has a count
-	string data; // A var to send finialized data back to rule manager
+	this->count = 0; // A storeage var for any rule that just has a count
+	this->data; // A var to send finialized data back to rule manager
 }
 
 string MasterRule::getName()
 {
-	return name;
+	return this->name;
 }
 
 // Receive the line from RuleManager here and split
