@@ -13,7 +13,8 @@
 #include "RuleManager.h"
 #include <string>
 #include <vector>
-#include <stringstream>
+#include <sstream>
+#include <iterator>
 
 int main(int argc, char** argv)
 {
@@ -21,32 +22,31 @@ int main(int argc, char** argv)
 	Parser parser;
 	vector<string> filePaths;
 	vector<string> activeRules;
-	int j = 0
+	int j = 0;
 
 	for(int i = 1; i < argc; i++)
 	{
 		if(argv[i] == "-filepath")
 		{
-			j = 0;
-			std::istringstream iss(argv[i+1]);;
-			for(std::string s; iss >> s; )
-			{
-    			filePaths[j].emplace_back(s);
-    			j++
-			}
+			std::istringstream iss(argv[i+1]);
+			std::vector<std::string> filePaths{
+				std::istream_iterator<std::string>(iss), {}
+			};
 		}
 
 		else if (argv[i] == "-rules")
 		{
-			j = 0;
-			std::istringstream iss(argv[i+1]);;
-			for(std::string s; iss >> s; )
-			{
-    			activeRules[j].emplace_back(s);
-    			j++
-			}
+			std::istringstream iss(argv[i+1]);
+			std::vector<std::string> activeRules{
+				std::istream_iterator<std::string>(iss), {}
+			};
 		}
 	}
+	filePaths.push_back("C:\\Users\\Bobby\\Documents\\GitHub\\SeniorProject\\SourceCodeChecker\\SourceCodeChecker\\Rules\\IntCountRule.cpp");
+	activeRules.push_back("ForLoopCount");
+	activeRules.push_back("SemicolonCount");
+	activeRules.push_back("IntCountRule");
+
 
 	// Set ruleManager Rules
 	ruleManager->setActiveRules(activeRules);
@@ -54,6 +54,6 @@ int main(int argc, char** argv)
 	// Run Parser on files
 	for(j = 0; j < filePaths.size(); j++)
 		parser.Parse(filePaths[j]);
-	
+
 	return 0;
 }
