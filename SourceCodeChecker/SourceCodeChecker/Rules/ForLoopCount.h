@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "MasterRule.h"
+#include "../MasterRule.h"
 
 using namespace std;
 
