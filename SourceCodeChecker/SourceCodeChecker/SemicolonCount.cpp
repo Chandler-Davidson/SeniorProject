@@ -1,4 +1,4 @@
-//Count number of "for" loops
+//Count number of "semi-colons"
 #include<iostream>
 #include<string>
 #include<regex>
