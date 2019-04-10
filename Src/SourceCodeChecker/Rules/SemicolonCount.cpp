@@ -38,7 +38,7 @@ string SemicolonCount::finished()
 	data = count;                      //this count is out of scope .finished() needs to receive count from run()
 
 
-	cout << "\n" << count << "\n";
+	cout << "\n" << name << ": " << count << "\n";
 	// Return count to 0
 	count = 0;
 	// Put data in a string and return it to the Rule Manager

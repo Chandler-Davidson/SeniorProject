@@ -38,7 +38,7 @@ string IntCountRule::finished()
 	data = count;
 
 
-	cout << "\n" << count << "\n";
+	cout << "\n" << name << ": " << count << "\n";
 	// Return count to 0
 	count = 0;
 	// Put data in a string and return it to the Rule Manager
