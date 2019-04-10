@@ -1,4 +1,4 @@
-//Count number of "for" loops
+//Count number of "semi-colons"
 #include<iostream>
 #include<string>
 #include<regex>
@@ -7,9 +7,9 @@
 SemicolonCount::SemicolonCount()
 {
 
-	this->name = "SemicolonCount"; // Name of the rule
-	this->count = 0; // A storeage var for any rule that just has a count
-	this->data = ""; // A var to send finialized data back to rule manager
+	string name = "SemicolonCount"; // Name of the rule
+	int count = 0; // A storeage var for any rule that just has a count
+	string data = ""; // A var to send finialized data back to rule manager
 
 }
 
@@ -35,10 +35,10 @@ void SemicolonCount::run(string l)
 // ~~Be sure to add this to your class and customize as needed.
 string SemicolonCount::finished()
 {
-	data = count; //this count is out of scope .finished() needs to receive count from run()
+	data = count;                      //this count is out of scope .finished() needs to receive count from run()
 
 
-	cout << "\n" << name << ":" << count << "\n";
+	cout << "\n" << count << "\n";
 	// Return count to 0
 	count = 0;
 	// Put data in a string and return it to the Rule Manager

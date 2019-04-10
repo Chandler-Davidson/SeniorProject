@@ -1,31 +1,32 @@
-//Count number of "for" loops
+//Count number of comment lines
 #include<iostream>
 #include<string>
 #include<regex>
-#include "IntCountRule.h"
+#include "CommentLineCount.h"
 
-IntCountRule::IntCountRule()
+CommentLineCount::CommentLineCount()
 {
 
-	string name = "IntCountRule"; // Name of the rule
+	string name = "CommentLineCount"; // Name of the rule
 	int count = 0; // A storeage var for any rule that just has a count
 	string data = ""; // A var to send finialized data back to rule manager
 
 }
 
 // Return the name of the rule. Used to initialize
-string IntCountRule::getName()
+string CommentLineCount::getName()
 {
 	return name;
 }
 
 // Receive the line from RuleManager here and split
 // the line up and send to checkLine to check
-void IntCountRule::run(string l)
+void CommentLineCount::run(string l)
 {
-	regex int_count("^.*int.[a-zA-Z,_0-9]*.*;$");
+	//Count comment lines beginning with"//"
+	regex comment_count("^.*//.*$");
 
-	if (regex_match(l, int_count))
+	if (regex_match(l, comment_count))
 		count += 1;
 }
 
@@ -33,9 +34,9 @@ void IntCountRule::run(string l)
 // used to send collected metrics back to the
 // rule manager. 
 // ~~Be sure to add this to your class and customize as needed.
-string IntCountRule::finished()
+string CommentLineCount::finished()
 {
-	data = count;
+	data = count;                      //this count is out of scope .finished() needs to receive count from run()
 
 
 	cout << "\n" << count << "\n";

@@ -22,6 +22,9 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CommentLineCount.cpp">
+      <Filter>Rule Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Rules\ForLoopCount.h">
@@ -40,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rules\SemicolonCount.h">
+      <Filter>Rule Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommentLineCount.h">
       <Filter>Rule Files</Filter>
     </ClInclude>
   </ItemGroup>

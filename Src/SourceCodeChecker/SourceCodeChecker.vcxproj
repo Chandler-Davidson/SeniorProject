@@ -80,6 +80,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommentLineCount.cpp" />
     <ClCompile Include="Rules\ForLoopCount.cpp" />
     <ClCompile Include="MasterRule.cpp" />
     <ClCompile Include="Parser.cpp" />
@@ -89,6 +90,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommentLineCount.h" />
     <ClInclude Include="Rules\ForLoopCount.h" />
     <ClInclude Include="MasterRule.h" />
     <ClInclude Include="Parser.h" />
