@@ -27,12 +27,9 @@ RuleManager::RuleManager()
 		}
 	}
 
-	static IntCountRule* var1 = new IntCountRule();
-	this->rules.emplace_back(var1);
-	static ForLoopCount* var2 = new ForLoopCount();
-	this->rules.emplace_back(var2);
-	static SemicolonCount* var3 = new SemicolonCount();
-	this->rules.emplace_back(var3);
+	this->rules.emplace_back(new IntCountRule());
+	this->rules.emplace_back(new ForLoopCount());
+	this->rules.emplace_back(new SemicolonCount());
 
 	fileName = "";
 }
@@ -57,16 +54,15 @@ bool RuleManager::setActiveRules(vector<string> active)
 	for(int i = 0; i < active.size(); i++)
 	{
 		// Vs each actual rule
-		for(int j = 0; j < rules.size(); j++)
+		int j = 0;
+		for (const auto &rule : rules)
 		{
-			// If the name matches add location of j
-			// into activeRules and break;
-			auto currentRule = rules[j];
-			if(currentRule->getName() == active[i])
+			if (rule->getName() == active[i])
 			{
 				activeRules.emplace_back(j);
 				break;
 			}
+			j++;
 		}
 	}
 
