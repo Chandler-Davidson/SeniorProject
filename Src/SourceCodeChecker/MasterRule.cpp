@@ -14,7 +14,6 @@ MasterRule::MasterRule()
 	name = ""; // Name of the rule
 	//int state = 0; // ???
 	// Used to store data that is returned to the RuleManager
-	count = 0; // A storeage var for any rule that just has a count
 	data; // A var to send finialized data back to rule manager
 }
 

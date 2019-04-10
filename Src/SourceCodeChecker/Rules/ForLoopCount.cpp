@@ -7,9 +7,9 @@
 ForLoopCount::ForLoopCount()
 {
 
-	string name = "ForLoopCount"; // Name of the rule
-	int count = 0; // A storeage var for any rule that just has a count
-	string data = ""; // A var to send finialized data back to rule manager
+	this->name = "ForLoopCount"; // Name of the rule
+	this->count = 0; // A storeage var for any rule that just has a count
+	this->data = ""; // A var to send finialized data back to rule manager
 
 }
 
