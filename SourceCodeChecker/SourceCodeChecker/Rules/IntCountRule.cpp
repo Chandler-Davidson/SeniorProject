@@ -11,7 +11,7 @@
 IntCountRule::IntCountRule()
 {
 	// Base required variables
-	this->name = "IntRuleCount"; // Name of the rule
+	this->name = "IntCountRule"; // Name of the rule
 	//int state = 0; // ??? Not sure what I had in mind here
 	// Used to store data that is returned to the RuleManager
 	this->count = 0; // A storeage var for any rule that just has a count
@@ -25,7 +25,7 @@ IntCountRule::IntCountRule()
 // Return the name of the rule. Used to initialize
 string IntCountRule::getName()
 {
-	return this->name;
+	return name;
 }
 
 // Receive the line from RuleManager here and split
