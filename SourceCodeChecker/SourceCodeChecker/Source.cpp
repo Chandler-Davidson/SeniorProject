@@ -26,26 +26,28 @@ int main(int argc, char** argv)
 
 	for(int i = 1; i < argc; i++)
 	{
-		if(argv[i] == "-filepath")
+		string temp2 = "";
+		string temp = string(argv[i]);
+		if(sizeof(argv) >= i+1)
+			temp2 = string(argv[i + 1]);
+		if(temp == "-filepath")
 		{
-			std::istringstream iss(argv[i+1]);
-			std::vector<std::string> filePaths{
-				std::istream_iterator<std::string>(iss), {}
-			};
+			std::istringstream iss(temp2);
+			for (std::string s; iss >> s; )
+				filePaths.emplace_back(s);
 		}
 
-		else if (argv[i] == "-rules")
+		else if (temp == "-rules")
 		{
-			std::istringstream iss(argv[i+1]);
-			std::vector<std::string> activeRules{
-				std::istream_iterator<std::string>(iss), {}
-			};
+			std::istringstream iss(temp2);
+			for (std::string s; iss >> s; )
+				activeRules.emplace_back(s);
 		}
 	}
-	filePaths.push_back("C:\\Users\\Bobby\\Documents\\GitHub\\SeniorProject\\SourceCodeChecker\\SourceCodeChecker\\Rules\\IntCountRule.cpp");
-	activeRules.push_back("ForLoopCount");
-	activeRules.push_back("SemicolonCount");
-	activeRules.push_back("IntCountRule");
+	//filePaths.push_back("C:\\Users\\Bobby\\Documents\\GitHub\\SeniorProject\\SourceCodeChecker\\SourceCodeChecker\\Rules\\IntCountRule.cpp");
+	//activeRules.push_back("ForLoopCount");
+	//activeRules.push_back("SemicolonCount");
+	//activeRules.push_back("IntCountRule");
 
 
 	// Set ruleManager Rules
@@ -54,6 +56,8 @@ int main(int argc, char** argv)
 	// Run Parser on files
 	for(j = 0; j < filePaths.size(); j++)
 		parser.Parse(filePaths[j]);
+
+	cin.get();
 
 	return 0;
 }
