@@ -1,5 +1,3 @@
-﻿  RuleManager.cpp
-c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rulemanager.cpp(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rulemanager.cpp(84): warning C4018: '<': signed/unsigned mismatch
-c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\rulemanager.cpp(96): warning C4018: '<': signed/unsigned mismatch
+﻿  Source.cpp
+c:\users\bobby\documents\github\seniorproject\sourcecodechecker\sourcecodechecker\source.cpp(57): warning C4018: '<': signed/unsigned mismatch
   SourceCodeChecker.vcxproj -> C:\Users\Bobby\Documents\GitHub\SeniorProject\SourceCodeChecker\Debug\SourceCodeChecker.exe
