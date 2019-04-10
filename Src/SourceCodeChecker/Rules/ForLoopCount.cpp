@@ -25,10 +25,8 @@ void ForLoopCount::run(string l)
 {
 	regex for_count( "^.*for.*\\)$");
 
-	if (regex_match(l, for_count)) {
-		cout << l;
+	if (regex_match(l, for_count)) 
 		count += 1;
-	}
 }
 
 	// Called after the file has finished being read
@@ -40,7 +38,7 @@ void ForLoopCount::run(string l)
 		data = count; //this count is out of scope .finished() needs to receive count from run()
 
 
-		cout << "\n" << count << "\n";
+		cout << "\n" << name << ":" << count << "\n";
 		// Return count to 0
 		count = 0;
 		// Put data in a string and return it to the Rule Manager

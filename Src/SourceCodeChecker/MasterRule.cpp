@@ -37,7 +37,7 @@ void MasterRule::run(string l)
 string MasterRule::finished()
 {
 	data = count;
-	cout << "\n" << count << "\n";
+	cout << "\n" << name << ":" << count << "\n";
 
 	count = 0;
 	// Put data in a string and return it to the Rule Manager

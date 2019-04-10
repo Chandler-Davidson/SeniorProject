@@ -97,7 +97,7 @@ void RuleManager::finished()
 	{
 		data = rules[activeRules[i]]->finished();
 
-		cout << "Stored data for: " << rules[activeRules[i]]->getName() << "\n";
+		//cout << "Stored data for: " << rules[activeRules[i]]->getName() << "\n";
 	}
 
 	fileName = "";

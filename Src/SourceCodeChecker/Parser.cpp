@@ -38,7 +38,7 @@ void Parser::Parse(string filePath)
 {
 	// Create input file stream and open file
 	ifstream myfile;
-	cout << filePath;
+	//cout << filePath;
 	myfile.open(filePath);
 
 	// Function to send RuleManager filepath
