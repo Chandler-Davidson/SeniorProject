@@ -16,7 +16,7 @@ SemicolonCount::SemicolonCount()
 // Return the name of the rule. Used to initialize
 string SemicolonCount::getName()
 {
-	return this->name;
+	return name;
 }
 
 // Receive the line from RuleManager here and split

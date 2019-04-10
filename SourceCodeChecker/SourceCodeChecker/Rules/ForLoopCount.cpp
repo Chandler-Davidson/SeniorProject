@@ -16,7 +16,7 @@ ForLoopCount::ForLoopCount()
 // Return the name of the rule. Used to initialize
 string ForLoopCount::getName()
 {
-	return this->name;
+	return name;
 }
 
 // Receive the line from RuleManager here and split
