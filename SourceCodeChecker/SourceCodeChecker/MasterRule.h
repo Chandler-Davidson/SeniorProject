@@ -23,7 +23,7 @@ public:
 	MasterRule();
 	virtual void run(string l);
 	virtual string finished();
-	string getName();
+	virtual string getName();
 
 protected:
 	// Used to store data that is returned to the RuleManager
