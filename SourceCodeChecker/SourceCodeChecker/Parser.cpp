@@ -7,6 +7,7 @@
 */
 #include<iostream>
 #include<fstream>
+
 #include "Parser.h"
 using namespace std;
 
@@ -55,8 +56,9 @@ void Parser::Parse(string filePath)
 			// Send the line to rule manager
 			ruleManager->run(line);
 		}
-		// Close the file
-		myfile.close();
+	
 		ruleManager->finished();
 	}
+	// Close the file
+	myfile.close();
 }

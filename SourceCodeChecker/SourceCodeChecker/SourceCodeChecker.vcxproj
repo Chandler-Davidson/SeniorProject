@@ -49,12 +49,12 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,7 +82,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommentLineRule.cpp" />
+    <ClCompile Include="CyclomaticComplexity.cpp" />
     <ClCompile Include="ForLoopCount.cpp" />
+    <ClCompile Include="If-stCount.cpp" />
     <ClCompile Include="MasterRule.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="RuleFactory.cpp" />
@@ -93,7 +96,10 @@
     <ClCompile Include="Test1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommentLineRule.h" />
+    <ClInclude Include="CyclomaticComplexity.h" />
     <ClInclude Include="ForLoopCount.h" />
+    <ClInclude Include="If-stCount.h" />
     <ClInclude Include="MasterRule.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="RuleFactory.h" />

@@ -1,1 +1,18 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: The Windows SDK version 8.1 was not found. Install the required version of Windows SDK or change the SDK version in the project property pages or by right-clicking the solution and selecting "Retarget solution".
+﻿  If-stCount.cpp
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.h(2): error C2008: '-': unexpected in macro definition
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.cpp(11): warning C4458: declaration of 'name' hides class member
+  c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.h(20): note: see declaration of 'IfCountRule::name'
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.cpp(12): warning C4458: declaration of 'count' hides class member
+  c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\masterrule.h(30): note: see declaration of 'MasterRule::count'
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.cpp(13): warning C4458: declaration of 'data' hides class member
+  c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\masterrule.h(31): note: see declaration of 'MasterRule::data'
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\if-stcount.cpp(40): warning C4244: 'argument': conversion from 'int' to 'const _Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+  IntCountRule.cpp
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.h(24): error C2504: 'MasterRule': base class undefined
+c:\cs499-srproject\seniorproject\sourcecodechecker\sourcecodechecker\rules\intcountrule.cpp(6): fatal error C1083: Cannot open include file: 'MasterRule.h': No such file or directory
+  Generating Code...

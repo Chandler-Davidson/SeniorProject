@@ -8,13 +8,15 @@
 *
 *	It will return a count
 */
+#include <iostream>
+#include <string>
+
 
 #ifndef INTCOUNTRULE_H
 #define INTCOUNTRULE_H
 
-#include <iostream>
-#include <string>
-#include "../MasterRule.h"
+
+
 
 using namespace std;
 
@@ -32,7 +34,7 @@ private:
 	//int state;
 	// Used to store data that is returned to the RuleManager
 	//int count;
-	//string data;
+	string data;
 };
 
 #endif

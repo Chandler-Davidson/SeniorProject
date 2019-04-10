@@ -13,7 +13,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Rules">
+    <Filter Include="Source Files\Rules">
       <UniqueIdentifier>{6181e17a-4303-4229-b6bb-33f3bf0362c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -34,25 +34,28 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Rules\IntCountRule.cpp">
-      <Filter>Rules</Filter>
+      <Filter>Source Files\Rules</Filter>
     </ClCompile>
     <ClCompile Include="RuleFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ForLoopCount.cpp">
-      <Filter>Rules</Filter>
+      <Filter>Source Files\Rules</Filter>
     </ClCompile>
     <ClCompile Include="SemicolonCount.cpp">
-      <Filter>Rules</Filter>
+      <Filter>Source Files\Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="CommentLineRule.cpp">
+      <Filter>Source Files\Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="If-stCount.cpp">
+      <Filter>Source Files\Rules</Filter>
+    </ClCompile>
+    <ClCompile Include="CyclomaticComplexity.cpp">
+      <Filter>Source Files\Rules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Rules\IntCountRule.h">
-      <Filter>Rules</Filter>
-    </ClInclude>
-    <ClInclude Include="ForLoopCount.h">
-      <Filter>Rules</Filter>
-    </ClInclude>
     <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -65,8 +68,23 @@
     <ClInclude Include="RuleFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CyclomaticComplexity.h">
+      <Filter>Source Files\Rules</Filter>
+    </ClInclude>
+    <ClInclude Include="CommentLineRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ForLoopCount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="If-stCount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rules\IntCountRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="SemicolonCount.h">
-      <Filter>Rules</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

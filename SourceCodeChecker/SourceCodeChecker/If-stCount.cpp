@@ -3,6 +3,7 @@
 #include<string>
 #include<regex>
 #include "If-stCount.h"
+#include"RuleManager.h"
 
 IfCountRule::IfCountRule()
 {

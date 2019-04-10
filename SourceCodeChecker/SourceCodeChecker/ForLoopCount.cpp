@@ -3,6 +3,7 @@
 #include<string>
 #include<regex>
 #include "ForLoopCount.h"
+#include"RuleManager.h"
 
 ForLoopCount::ForLoopCount()
 {

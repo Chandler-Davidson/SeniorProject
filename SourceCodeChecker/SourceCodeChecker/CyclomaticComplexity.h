@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CYCLOMATICCOMPLEXITY_H
 #define  CYCLOMATICCOMPLEXITY_H
 
@@ -25,5 +26,5 @@ private:
 };
 
 #endif
-#pragma once
+
 
