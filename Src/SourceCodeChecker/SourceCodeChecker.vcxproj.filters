@@ -19,11 +19,11 @@
     <ClCompile Include="Rules\SemicolonCount.cpp">
       <Filter>Rule Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CommentLineCount.cpp">
       <Filter>Rule Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyzer.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="CommentLineCount.h">
       <Filter>Rule Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyzer.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
