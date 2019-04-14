@@ -24,6 +24,7 @@
 #include "Rules/IntCountRule.h"
 #include "Rules/ForLoopCount.h"
 #include "Rules/SemicolonCount.h"
+#include "CommentLineCount.h"
 
 using namespace std;
 
@@ -56,10 +57,10 @@ private:
 public:
 	// Used to get the instance of Rule Manager
 	static RuleManager* getInstance();
-	bool setActiveRules(vector<string> active);
+	void setActiveRules(vector<string> active);
 	void setName(string fileName);
 	void run(string input);
-	void finished();
+	string finished();
 };
 
 #endif

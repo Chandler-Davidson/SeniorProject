@@ -8,9 +8,10 @@
 #include<iostream>
 #include<fstream>
 #include "Parser.h"
+
 using namespace std;
 
-#include "Parser.h"
+Parser* Parser::instance = 0;
 
 // Will intialize ruleManager if called by just Parser
 Parser::Parser()
@@ -31,34 +32,58 @@ Parser::Parser(string path)
 // TODO: Add a way to tell the RuleManager what
 //		 file is currently being used
 
+Parser* Parser::getInstance()
+{
+	if (instance == 0)
+	{
+		instance = new Parser();
+	}
+
+	return instance;
+}
+
 //Main function used to parse files
 // Doesn't need to return anything
 // it calls Rule Manager directly
-void Parser::Parse(string filePath)
+void Parser::Parse()
 {
-	// Create input file stream and open file
-	ifstream myfile;
-	//cout << filePath;
-	myfile.open(filePath);
-
-	// Function to send RuleManager filepath
-
-	string line;
-
-	if (myfile.is_open())
+	for (auto filePath : this->filePaths)
 	{
-		// Tell RuleManager what file is being
-		// parsed currently
-		ruleManager->setName(filePath);
 
-		// Pull out each line to send to Rule Manager
-		while (getline(myfile, line))
+		// Create input file stream and open file
+		ifstream myfile;
+
+		myfile.open(filePath);
+
+		// Function to send RuleManager filepath
+
+		string line;
+
+		if (myfile.is_open())
 		{
-			// Send the line to rule manager
-			ruleManager->run(line);
+			// Tell RuleManager what file is being
+			// parsed currently
+			ruleManager->setName(filePath);
+
+			// Pull out each line to send to Rule Manager
+			while (getline(myfile, line))
+			{
+				// Send the line to rule manager
+				ruleManager->run(line);
+			}
+			// Close the file
+			myfile.close();
+			ruleManager->finished();
 		}
-		// Close the file
-		myfile.close();
-		ruleManager->finished();
 	}
+}
+
+void Parser::setFilePaths(vector<string> filePaths)
+{
+	this->filePaths = filePaths;
+}
+
+vector<string> Parser::getFilePaths()
+{
+	return this->filePaths;
 }

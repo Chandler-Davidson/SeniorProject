@@ -10,26 +10,27 @@ RuleManager* RuleManager::instance = 0;
 // Constructior for RuleManager
 RuleManager::RuleManager()
 {
-	int i = 0;
-	// Get list of rules on creation
-	for (std::filesystem::directory_entry p : std::filesystem::directory_iterator("Rules"))
-	{
-		string ruleName = p.path().string();
-		int end = ruleName.find(".cpp");
-		if (end != string::npos)
-		{
-			// Start at the end of the directory name
-			// and substract directory name and .cpp
-			// from the total length.
-			ruleName = ruleName.substr(6, ruleName.size() - 10);
-			// Add rule to list of callable rules
-			//rules[i] = callFacotry(ruleName);
-		}
-	}
+	//int i = 0;
+	//// Get list of rules on creation
+	//for (std::filesystem::directory_entry p : std::filesystem::directory_iterator("Rules"))
+	//{
+	//	string ruleName = p.path().string();
+	//	int end = ruleName.find(".cpp");
+	//	if (end != string::npos)
+	//	{
+	//		// Start at the end of the directory name
+	//		// and substract directory name and .cpp
+	//		// from the total length.
+	//		ruleName = ruleName.substr(6, ruleName.size() - 10);
+	//		// Add rule to list of callable rules
+	//		//rules[i] = callFacotry(ruleName);
+	//	}
+	//}
 
 	this->rules.emplace_back(new IntCountRule());
 	this->rules.emplace_back(new ForLoopCount());
 	this->rules.emplace_back(new SemicolonCount());
+	this->rules.emplace_back(new CommentLineCount());
 
 	fileName = "";
 }
@@ -48,25 +49,22 @@ RuleManager* RuleManager::getInstance()
 // For receiving the active rules. Return false if
 // there is any errors setting up the rules.
 // Create using the rule name?
-bool RuleManager::setActiveRules(vector<string> active)
+void RuleManager::setActiveRules(vector<string> ruleNames)
 {
 	// Check each passed rule name
-	for(int i = 0; i < active.size(); i++)
+	for (auto ruleName : ruleNames)
 	{
-		// Vs each actual rule
-		int j = 0;
-		for (const auto &rule : rules)
+		for (int i = 0; i < rules.size(); i++)
 		{
-			if (rule->getName() == active[i])
+			const auto &rule = rules[i];
+
+			if (rule->getName() == ruleName)
 			{
-				activeRules.emplace_back(j);
+				activeRules.emplace_back(i);
 				break;
 			}
-			j++;
 		}
 	}
-
-	return true;
 }
 
 // For receiving the file name. Return false if
@@ -87,18 +85,19 @@ void RuleManager::run(string input)
 
 // Will be called at the end of a file and retreive the
 // final metrics from the rules then push them to storage
-void RuleManager::finished()
+string RuleManager::finished()
 {
-	string data; // Temp string to hold metrics
+	string data = "{"; // Temp string to hold metrics
 
 	// Loop all active rules to tell them the
 	// parser is finished
-	for (int i = 0; i < activeRules.size(); ++i)
+	for (auto rule : activeRules)
 	{
-		data = rules[activeRules[i]]->finished();
-
-		//cout << "Stored data for: " << rules[activeRules[i]]->getName() << "\n";
+		data.append(rules[rule]->finished());
+		data.append(",");
 	}
 
-	fileName = "";
+	data.append("}");
+
+	return data;
 }

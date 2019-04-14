@@ -12,40 +12,55 @@ using namespace std;
 
 void SetActiveRules(char * config)
 {
-	// Convert getInstance() to static method
-	RuleManager* ruleManager;
-	ruleManager = ruleManager->getInstance();
+	// Delimit string to vector<string>
+	auto rules = split(config, ",");
 
-	// Convert char* to vector<string>
-	ruleManager->setActiveRules(vector<string>());
+	// Get RuleManager instance
+	auto ruleManager = RuleManager::getInstance();
+
+	// Set ActiveRules
+	ruleManager->setActiveRules(rules);
 }
 
 void SetFilePaths(char * config)
 {
-	throw "Not yet implemented";
+	// Delimit string to vector<string>
+	auto filePaths = split(config, ",");
 
-	// Convert getInstance() to static method
-	/*Parser* parser;
-	parser = parser->getInstance();
+	// Get Parser instance
+	auto parser = Parser::getInstance();
 
-	parser->setFilePaths(vector<string>());*/
+	// Set file paths
+	parser->setFilePaths(filePaths);
 }
 
-int StartAnalysis()
+void StartAnalysis(char * results)
 {
-	// Convert getInstance() to static method
-	/*Parser* parser;
-	parser = parser->getInstance();*/
+	// Get Parser instance
+	auto parser = Parser::getInstance();
+	auto ruleManager = RuleManager::getInstance();
 
-	string output = "";
+	// Analyze each file
+	parser->Parse();
 
-	// Run analysis per file
-	//for (auto file : parser->getFilePaths)
-	//{
-	//	// Build JSON output
-	//	output += parser.Parse(file);
-	//}
+	// Return json output
+	auto json = ruleManager->finished();
 
 	// Return JSON
-	return stoi(output);
+	strcpy(results, json.c_str());
+}
+
+// Helper function to delimit strings
+vector<string> split(char *phrase, string delimiter) {
+	vector<string> list;
+	string s = string(phrase);
+	size_t pos = 0;
+	string token;
+	while ((pos = s.find(delimiter)) != string::npos) {
+		token = s.substr(0, pos);
+		list.push_back(token);
+		s.erase(0, pos + delimiter.length());
+	}
+	list.push_back(s);
+	return list;
 }

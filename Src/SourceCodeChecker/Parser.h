@@ -19,13 +19,17 @@ using namespace std;
 
 class Parser
 {
-public:
-	Parser();
-	//Parser(string path);
-	void Parse(string filePath);
-
 private:
+	Parser();
+	static Parser* instance;
 	RuleManager* ruleManager;
+	vector<string> filePaths;
+
+public:
+	static Parser* getInstance();
+	void Parse();
+	void setFilePaths(vector<string>);
+	vector<string> getFilePaths();
 };
 
 #endif
