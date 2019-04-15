@@ -86,7 +86,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Analyzer.cpp" />
-    <ClCompile Include="CommentLineCount.cpp" />
+    <ClCompile Include="Rules\CommentLineCount.cpp" />
     <ClCompile Include="Rules\ForLoopCount.cpp" />
     <ClCompile Include="MasterRule.cpp" />
     <ClCompile Include="Parser.cpp" />
@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Analyzer.h" />
-    <ClInclude Include="CommentLineCount.h" />
+    <ClInclude Include="Rules\CommentLineCount.h" />
     <ClInclude Include="Rules\ForLoopCount.h" />
     <ClInclude Include="MasterRule.h" />
     <ClInclude Include="Parser.h" />

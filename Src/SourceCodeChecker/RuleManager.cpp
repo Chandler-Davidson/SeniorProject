@@ -51,6 +51,8 @@ RuleManager* RuleManager::getInstance()
 // Create using the rule name?
 void RuleManager::setActiveRules(vector<string> ruleNames)
 {
+	activeRules.clear();
+
 	// Check each passed rule name
 	for (auto ruleName : ruleNames)
 	{
@@ -65,6 +67,11 @@ void RuleManager::setActiveRules(vector<string> ruleNames)
 			}
 		}
 	}
+}
+
+void RuleManager::clearActiveRules()
+{
+	this->activeRules.clear();
 }
 
 // For receiving the file name. Return false if
@@ -94,10 +101,11 @@ string RuleManager::finished()
 	for (auto rule : activeRules)
 	{
 		data.append(rules[rule]->finished());
-		data.append(",");
+		data.append(", ");
 	}
 
 	data.append("}");
+	data.append("\0");
 
 	return data;
 }

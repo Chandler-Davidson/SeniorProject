@@ -36,6 +36,8 @@ void CommentLineCount::run(string l)
 // ~~Be sure to add this to your class and customize as needed.
 string CommentLineCount::finished()
 {
+	data = "";
+
 	// Format data
 	data.append(this->getName());
 	data.append(": ");

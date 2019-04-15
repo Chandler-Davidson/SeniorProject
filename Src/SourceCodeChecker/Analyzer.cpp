@@ -30,6 +30,9 @@ void StartAnalysis(char* results, char* rules, char* files)
 
 	// Return JSON
 	strcpy(results, json.c_str());
+
+	// Clear active configuration
+	ruleManager->clearActiveRules();
 }
 
 // Helper function to delimit strings

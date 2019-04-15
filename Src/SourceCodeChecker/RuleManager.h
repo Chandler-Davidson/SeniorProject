@@ -24,7 +24,7 @@
 #include "Rules/IntCountRule.h"
 #include "Rules/ForLoopCount.h"
 #include "Rules/SemicolonCount.h"
-#include "CommentLineCount.h"
+#include "Rules/CommentLineCount.h"
 
 using namespace std;
 
@@ -36,7 +36,6 @@ private:
 	// Private constructor so it can't be called
 	RuleManager();
 	// To remove all pointers
-	~RuleManager();
 	// Used to map the file strings to their class
 	//TODO: Create factory to add all rules that we
 	//       create so that we can instantiate each
@@ -61,6 +60,7 @@ public:
 	void setName(string fileName);
 	void run(string input);
 	string finished();
+	void clearActiveRules();
 };
 
 #endif
