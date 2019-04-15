@@ -55,44 +55,55 @@ namespace SeniorServer
 
         internal Response NewAnalysis()
         {
-            // Get analysis config from POST
-            var ruleConfig = Request.Form;
-
-            var file = Request.Files.FirstOrDefault();
-
-            var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SeniorProject", file?.Name);
-            using (var fileStream = new FileStream(fileName, FileMode.Create))
+            try
             {
-                file.Value.CopyTo(fileStream);
+                // Get analysis config from POST
+                var ruleConfig = Request.Form;
+
+                var file = Request.Files.FirstOrDefault();
+
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\SeniorProject";
+                System.IO.Directory.CreateDirectory(path);
+
+                var fileName = Path.Combine(path, file?.Name);
+                using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
+                {
+                    file.Value.CopyTo(fileStream);
+                }
+
+                var rules = ruleConfig["rules"]?.Value;
+                var filePaths = ruleConfig["fileName"]?.Value;
+                var timeRun = ruleConfig["time"]?.Value;
+
+                // Set C++ analysis
+                var results = Analyzer.RunAnalysis(rules, fileName);
+
+                // Add results to AnalysesDetails
+                var s = $"{{runId: \"{file.Name}:{timeRun}\", Rules: {results}}}";
+                DatabaseManager.InsertNewDocument("AnalysesDetails", s);
+
+                // Add analysis information to AnalysesRun
+                var analysesRun = DatabaseManager.GetCollection("AnalysesRun");
+                var sameNameFilter = Builders<BsonDocument>.Filter.Eq("Name", file.Name);
+                var alreadyExists = DatabaseManager.ExistsInCollection(analysesRun, sameNameFilter);
+
+                // If the document exists, update it. Otherwise, insert a new one.
+                if (alreadyExists)
+                {
+                    var update = Builders<BsonDocument>.Update.Push("Dates", timeRun);
+                    analysesRun.UpdateOne(sameNameFilter, update);
+                }
+                else
+                {
+                    var str = $"{{Name: \"{file.Name}\", Dates: [\"{timeRun}\"] }}";
+                    var doc = BsonDocument.Parse(str);
+                    analysesRun.InsertOne(doc);
+                }
             }
-
-            var rules = ruleConfig["rules"]?.Value;
-            var filePaths = ruleConfig["fileName"]?.Value;
-            var timeRun = ruleConfig["time"]?.Value;
-
-            // Set C++ analysis
-            var results = Analyzer.RunAnalysis(rules, fileName);
-
-            // Add results to AnalysesDetails
-            var s = $"{{runId: \"{file.Name}:{timeRun}\", Rules: {results}}}";
-            DatabaseManager.InsertNewDocument("AnalysesDetails", s);
-
-            // Add analysis information to AnalysesRun
-            var analysesRun = DatabaseManager.GetCollection("AnalysesRun");
-            var sameNameFilter = Builders<BsonDocument>.Filter.Eq("Name", file.Name);
-            var alreadyExists = DatabaseManager.ExistsInCollection(analysesRun, sameNameFilter);
-
-            // If the document exists, update it. Otherwise, insert a new one.
-            if (alreadyExists)
+            catch (Exception e)
             {
-                var update = Builders<BsonDocument>.Update.Push("Dates", timeRun);
-                analysesRun.UpdateOne(sameNameFilter, update);
-            }
-            else
-            {
-                var str = $"{{Name: \"{file.Name}\", Dates: [\"{timeRun}\"] }}";
-                var doc = BsonDocument.Parse(str);
-                analysesRun.InsertOne(doc);
+
+                throw;
             }
 
             return HttpStatusCode.OK;
