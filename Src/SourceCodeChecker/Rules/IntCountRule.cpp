@@ -35,12 +35,13 @@ void IntCountRule::run(string l)
 // ~~Be sure to add this to your class and customize as needed.
 string IntCountRule::finished()
 {
-	data = count;
+	// Format data
+	data.append(this->getName());
+	data.append(": ");
+	data.append(std::to_string(count));
 
-
-	cout << "\n" << name << ": " << count << "\n";
 	// Return count to 0
 	count = 0;
-	// Put data in a string and return it to the Rule Manager
+
 	return data;
 }

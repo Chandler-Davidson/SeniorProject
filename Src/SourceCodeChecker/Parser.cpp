@@ -73,7 +73,6 @@ void Parser::Parse()
 			}
 			// Close the file
 			myfile.close();
-			ruleManager->finished();
 		}
 	}
 }

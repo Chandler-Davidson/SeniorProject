@@ -35,12 +35,13 @@ void ForLoopCount::run(string l)
 // ~~Be sure to add this to your class and customize as needed.
 string ForLoopCount::finished()
 {
-	data = count;                      //this count is out of scope .finished() needs to receive count from run()
+	// Format data
+	data.append(this->getName());
+	data.append(": ");
+	data.append(std::to_string(count));
 
-
-	cout << "\n" << name << ": " << count << "\n";
 	// Return count to 0
 	count = 0;
-	// Put data in a string and return it to the Rule Manager
+
 	return data;
 }

@@ -10,35 +10,17 @@
 
 using namespace std;
 
-void SetActiveRules(char * config)
+void StartAnalysis(char* results, char* rules, char* files)
 {
-	// Delimit string to vector<string>
-	auto rules = split(config, ",");
-
-	// Get RuleManager instance
+	// Set active rules
 	auto ruleManager = RuleManager::getInstance();
-
-	// Set ActiveRules
-	ruleManager->setActiveRules(rules);
-}
-
-void SetFilePaths(char * config)
-{
-	// Delimit string to vector<string>
-	auto filePaths = split(config, ",");
-
-	// Get Parser instance
-	auto parser = Parser::getInstance();
+	auto activeRules = split(rules, ",");
+	ruleManager->setActiveRules(activeRules);
 
 	// Set file paths
-	parser->setFilePaths(filePaths);
-}
-
-void StartAnalysis(char * results)
-{
-	// Get Parser instance
 	auto parser = Parser::getInstance();
-	auto ruleManager = RuleManager::getInstance();
+	auto filePaths = split(files, ",");
+	parser->setFilePaths(filePaths);
 
 	// Analyze each file
 	parser->Parse();
