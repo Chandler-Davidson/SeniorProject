@@ -7,7 +7,7 @@ namespace SeniorServer
     public static class Analyzer
     {
         private const string DllLocation =
-            @"C:\Users\chand\Documents\GitHub\SeniorProject\Src\Debug\SourceCodeChecker.dll";
+            @"..\..\..\..\BackendAnalyzer\Debug\SourceCodeChecker.dll";
 
         public static string RunAnalysis(string rules, string filePaths)
         {
