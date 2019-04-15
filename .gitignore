@@ -404,3 +404,7 @@ SourceCodeChecker/.vs/
 *.lai
 *.la
 *.a
+
+node_modules
+.next
+.DS_STORE

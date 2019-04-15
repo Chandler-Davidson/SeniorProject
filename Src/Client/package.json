@@ -1,0 +1,41 @@
+{
+  "name": "SeniorFront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next ./src",
+    "build": "next build ./src",
+    "start": "next start ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chandler-Davidson/SeniorFront.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chandler-Davidson/SeniorFront/issues"
+  },
+  "homepage": "https://github.com/Chandler-Davidson/SeniorFront#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "downloadjs": "^1.4.7",
+    "json-2-csv": "^3.5.0",
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-dom": "^16.8.6",
+    "react-switch": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "1.16.4"
+  }
+}
