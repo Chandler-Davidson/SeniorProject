@@ -1,17 +1,36 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using MongoDB.Bson;
-using MongoDB.Bson.IO;
 using MongoDB.Driver;
-using Nancy;
-using Nancy.Responses;
 
 namespace SeniorServer
 {
     public class DatabaseManager
     {
+        private const string _databaseName = "SeniorProject";
+        private readonly string _defaultRulesDocument = File.ReadAllText(@"..\..\defaultRules.json");
+
         private readonly FilterDefinition<BsonDocument> _emptyFilter = Builders<BsonDocument>.Filter.Empty;
         internal static MongoClient Client { get; } = new MongoClient("mongodb://localhost:27017");
-        internal static IMongoDatabase Database { get; } = Client.GetDatabase("SeniorProject");
+        internal static IMongoDatabase Database { get; } = Client.GetDatabase(_databaseName);
+
+        public DatabaseManager()
+        {
+            var collExists = CollectionExists(Database, "Rules");
+
+            if (!collExists)
+            {
+                Database.CreateCollection("Rules");
+                InsertNewDocument("Rules", _defaultRulesDocument);
+            }
+        }
+
+        public bool CollectionExists(IMongoDatabase database, string collectionName)
+        {
+            var filter = new BsonDocument("name", collectionName);
+            var collectionCursor = database.ListCollections(new ListCollectionsOptions { Filter = filter });
+            return collectionCursor.Any();
+        }
 
         internal IMongoCollection<BsonDocument> GetCollection(string collectionName)
         {

@@ -1,0 +1,28 @@
+﻿{
+    "Comments": [
+        {
+            "id": "CommentLineCount",
+            "name": "Line",
+            "description": "loremIpsum"
+        }
+    ],
+    "Declarations": [
+        {
+            "id": "IntCountRule",
+            "name": "Integers",
+            "description": "loremIpsum"
+        }
+    ],
+    "Controls": [
+        {
+            "id": "ForLoopCount",
+            "name": "For Loops",
+            "description": "loremIpsum"
+        },
+        {
+            "id": "SemicolonCount",
+            "name": "Semicolons",
+            "description": "loremIpsum"
+        }
+    ]
+}
