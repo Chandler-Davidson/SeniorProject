@@ -19,7 +19,13 @@ The entire project is made up of three parts:
 
 ## Beginning Development
 
-Currently, there is no automated build process; however, it is mostly straightforward.
+~~Currently, there is no automated build process; however, it is mostly straightforward.~~
+
+You can use the [.bat file](../Docs) to automatically build the files and start the client
+
+OR 
+
+Manually build it
 
 #### BackendAnalyzer
 
