@@ -19,7 +19,11 @@ The entire project is made up of three parts:
 
 ## Beginning Development
 
-Currently, there is no automated build process; however, it is mostly straightforward.
+You can run the [.bat file](../Docs) as Admin to automatically fetch dependencies and build each project.
+
+OR
+
+Manually build it
 
 #### BackendAnalyzer
 
@@ -38,6 +42,6 @@ Currently, there is no automated build process; however, it is mostly straightfo
 
 1. Open the `Client/` directory using a CLI.
 2. Run the command `npm install`, this will install all dependencies.
-3. Once installed, run `npm run dev`.
+3. Once installed, run `npm run dev` to start the dev server.
 4. Open a browser to `localhost:3000`.
 5. Have fun!
