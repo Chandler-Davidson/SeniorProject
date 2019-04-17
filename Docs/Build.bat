@@ -35,7 +35,7 @@ set PATH=%userpath%;%syspath%
 @cd /d "%~dp0"
 
 :: Build C++ project
-%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" ..\Src\BackendAnalyzer\SourceCodeChecker.sln
+"%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" ..\Src\BackendAnalyzer\SourceCodeChecker.sln
 
  :: Install C# project dependencies
 nuget restore ..\Src\Server\SeniorServer.sln
