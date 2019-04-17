@@ -3,26 +3,26 @@
         {
             "id": "CommentLineCount",
             "name": "Line",
-            "description": "loremIpsum"
+            "description": "Counts the number of line comments within a file. Does not include block comments that span a single line."
         }
     ],
     "Declarations": [
-        {
-            "id": "IntCountRule",
-            "name": "Integers",
-            "description": "loremIpsum"
-        }
+      {
+        "id": "IntCountRule",
+        "name": "Integers",
+        "description": "Counts the number of integer declarations within a file."
+      }
     ],
     "Controls": [
         {
             "id": "ForLoopCount",
             "name": "For Loops",
-            "description": "loremIpsum"
+            "description": "Counts the number of for loops within a file. Capable of being combined with if statements for general looping complexity."
         },
         {
             "id": "SemicolonCount",
             "name": "Semicolons",
-            "description": "loremIpsum"
+            "description": "Counts the number of semicolons within a file. Useful for counting number of executable lines of code."
         }
     ]
 }
