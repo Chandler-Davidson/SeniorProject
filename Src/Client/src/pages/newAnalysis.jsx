@@ -23,18 +23,20 @@ const sendFormData = () => {
   const switches = [...document.getElementsByTagName('input')];
   const enabledRules = switches.filter(s => s.checked === true).map(s => s.id);
 
-  const file = document.getElementById('fileUploader').files[0];
-  const filePath = document.getElementById('fileUploader').value;
-  const fileName = filePath.slice(filePath.lastIndexOf('\\') + 1);
+  const files = [...document.getElementById('fileUploader').files];
+  const fileNames = files.map(file => file.name);
   const timeRun = new Date().toISOString();
-  const runId = `${fileName}:${timeRun}`;
+  const runId = `${fileNames.join(', ')}:${timeRun}`;
 
   let formData = new FormData();
   formData.set('rules', enabledRules);
   formData.set('runId', runId);
-  formData.set('fileName', fileName);
-  formData.set('file', file);
+  formData.set('fileName', fileNames);
   formData.set('time', timeRun);
+
+  files.forEach(x => {
+    formData.append('files', x);
+  });
 
   (async () => {
     const response = await SendData('NewAnalysis', formData);
@@ -65,8 +67,6 @@ export default function NewAnalysis() {
 
       <input
         type="file"
-        webkitdirectory
-        directory
         multiple
         id="fileUploader"
         style={{ display: 'none' }}
