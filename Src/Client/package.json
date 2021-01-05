@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Chandler-Davidson/SeniorFront#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "downloadjs": "^1.4.7",
     "json-2-csv": "^3.5.0",
